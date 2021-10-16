@@ -1,0 +1,15 @@
+{% extends "djWebs/base.html" %}
+
+{% block content %}
+
+<p>Topics</p>
+<ul>
+    {% for topic in topics %}
+    <li>
+        <a href="{% url 'djWebs:topic' topic.id %}">{{ topic }}</a>
+    </li>
+    {% empty %}
+    <li>No topics have been added yet</li>
+    {% endfor %}
+</ul>
+{% endblock %}
